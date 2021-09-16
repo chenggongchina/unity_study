@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
@@ -44,7 +45,9 @@ public class GameProgressManager : MonoBehaviour
     
     private void NewGame()
     {
-        StartCoroutine(GameLoop());
+        
+        //StartCoroutine(GameLoop()); //协程版本
+        GameLoopVer2().Forget(); //unitask版本
     }
     
     void ClearGameState()
@@ -126,7 +129,7 @@ public class GameProgressManager : MonoBehaviour
     }
 
 
-        
+    //协程版本
     IEnumerator GameLoop()
     {
         ClearGameState();
@@ -141,7 +144,8 @@ public class GameProgressManager : MonoBehaviour
             }
         }
     }
-    
+
+    //协程版本
     private IEnumerator PlayerInput(int player)
     {
         if (playerState[player] == PlayerInputState.End)
@@ -156,5 +160,40 @@ public class GameProgressManager : MonoBehaviour
         
         playerState[player] = PlayerInputState.WaitingInput;
         yield return new WaitUntil(() => playerState[player] != PlayerInputState.WaitingInput); //等待输入
+    }
+    
+    
+    //unitask版本
+    async UniTask GameLoopVer2()
+    {
+        ClearGameState();
+        while (true)
+        {
+            await PlayerInputVer2(0);
+            await PlayerInputVer2(1);
+            if (playerState[0] == PlayerInputState.End && playerState[1] == PlayerInputState.End)
+            {
+                ShowResult();
+                return;
+            }
+        }
+    }
+
+    
+    //unitask版本
+    async UniTask PlayerInputVer2(int player)
+    {
+        if (playerState[player] == PlayerInputState.End)
+            return;
+        
+        int otherPlayer = (player == 0) ? 1 : 0;
+
+        btnPlayerGo[player].gameObject.SetActive(true);
+        btnPlayerEnd[player].gameObject.SetActive(true);
+        btnPlayerGo[otherPlayer].gameObject.SetActive(false);
+        btnPlayerEnd[otherPlayer].gameObject.SetActive(false);
+        
+        playerState[player] = PlayerInputState.WaitingInput;
+        await UniTask.WaitUntil(() => playerState[player] != PlayerInputState.WaitingInput);
     }
 }
