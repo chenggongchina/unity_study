@@ -2,17 +2,3 @@
 
 在Editor/SceneSwitcher.cs的OnToolbarGUI方法中进行配置。
 
-
-样例:
-
-```
-		static void OnToolbarGUI()
-		{
-			GUILayout.FlexibleSpace();
-
-			if(GUILayout.Button(new GUIContent("P", "Start Play"), ToolbarStyles.commandButtonStyle))
-			{
-				SceneHelper.StartScene("Assets/Scenes/LoginScene.unity");
-            }
-        }
-```
