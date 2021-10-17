@@ -20,12 +20,15 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/BehaviorTestCond.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6D22430C-7351-43F2-89C1-2A7DC7CDDCF9/7d/0a42a3d5/Behavior.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Behavior Designer Movement/Scripts/Tasks/MoveTowards.cs" />
       <option value="$PROJECT_DIR$/Assets/BehaviorTestCond.cs" />
+      <option value="$PROJECT_DIR$/../README.md" />
       <option value="$PROJECT_DIR$/Assets/BehaviorTestRoot.cs" />
+      <option value="$PROJECT_DIR$/README.md" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zcZFNIl10PPW509lTyHYq4rDI7" />
@@ -51,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634449233659</updated>
-      <workItem from="1634449240578" duration="5268000" />
+      <workItem from="1634449240578" duration="13715000" />
     </task>
     <servers />
   </component>

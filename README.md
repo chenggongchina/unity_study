@@ -5,3 +5,4 @@
 
 * AynscProgressTest 使用异步手段（协程或Unitask）进行游戏流程控制的模拟（一个简单的21点游戏规则）
 * FastBootGame 快捷启动unity指定场景工具
+* BehaviorTreeTest 基于Unity插件Behavior Designer的学习应用

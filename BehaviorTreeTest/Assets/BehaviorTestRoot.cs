@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using BehaviorDesigner.Runtime;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -14,6 +15,9 @@ public class BehaviorTestRoot : MonoBehaviour
     
     public GameObject player;
     public Dropdown dropdown;
+
+    public ExternalBehaviorTree behaviorSource;
+    public List<GameObject> npcCopyTargets;
     
     private NavMeshAgent agent;
     
@@ -22,6 +26,21 @@ public class BehaviorTestRoot : MonoBehaviour
         agent = player.GetComponent<NavMeshAgent>();
         dropdown.options.Clear();
         dropdown.AddOptions(behaviors.ToList());
+        
+        //behaviorSource.SetVariableValue("target",player); //无用，不会赋值
+        
+        if (npcCopyTargets != null && npcCopyTargets.Count > 0)
+        {
+            foreach (var npc in npcCopyTargets)
+            {
+                var instance = Instantiate(behaviorSource);
+                //instance.SetVariableValue("target", player);  //无用，不会赋值
+                var tree = npc.AddComponent<BehaviorTree>();
+                tree.ExternalBehavior = instance;
+                tree.SetVariableValue("target", player);
+                tree.StartWhenEnabled = true;
+            }
+        }
     }
 
     public void OnDropdownSelect(int index)
