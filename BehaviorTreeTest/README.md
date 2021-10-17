@@ -1,5 +1,7 @@
 # Behavior Designer学习笔记
 
+特别注意：本工程中Behavior Designer没有取得授权，如果你希望使用，可以到Unity的assetstore购买正版。
+
 ## 相关资源
 
 ### 官方文档
