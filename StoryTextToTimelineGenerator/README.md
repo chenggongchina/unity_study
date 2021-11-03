@@ -5,7 +5,7 @@
 
 本DEMO仅用作简单的技术测试实现验证，功能为将一段编写好的文本文件转化为可播放的Timeline。并填入动作、对话、摄像机切换等。
 
-比如样例台本（位于Assets/TimelineGenerate下）
+比如样例台本GENERATE.txt（位于Assets/TimelineGenerate下）
 
 
 ```
