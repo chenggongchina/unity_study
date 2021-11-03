@@ -7,3 +7,4 @@
 * FastBootGame 快捷启动unity指定场景工具
 * BehaviorTreeTest 基于Unity插件Behavior Designer的学习应用
 * AnimatorIKTest IK功能测试
+* StoryTextToTimelineGenerator 剧情文本生成为Timeline的DEMO
