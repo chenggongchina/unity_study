@@ -6,7 +6,9 @@
 
 这里我们尝试一种基于异步编程的写法，本DEMO提供基于协程（Coroutine）和基于异步编程（Unitask）两种写法，
 
-核心为你可以使用`WaitUntil`或者`UniTask.WaitUntil`逻辑来实现UI的阻塞等待，这样可以让逻辑更为顺畅。
+核心为你可以使用`WaitUntil`或者`UniTask.WaitUntil`逻辑来实现等待玩家进行输入，以驱动后续逻辑流程。
+
+而你的主循环也可以写在一段代码里，这样整个编写非常直观，对程序员友好。
 
 关于本方法的进一步使用，亦可参考笔者在开源游戏[金庸群侠传3D重制版战斗部分的实现](https://github.com/jynew/jynew/blob/main/jyx2/Assets/Scripts/BattleManager/BattleLoop.cs)
 
