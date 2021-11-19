@@ -8,3 +8,4 @@
 * [BehaviorTreeTest](https://github.com/chenggongchina/unity_study/tree/main/BehaviorTreeTest) 基于Unity插件Behavior Designer的学习应用
 * [AnimatorIKTest](https://github.com/chenggongchina/unity_study/tree/main/AnimatorIKTest) IK功能测试
 * [StoryTextToTimelineGenerator](https://github.com/chenggongchina/unity_study/tree/main/StoryTextToTimelineGenerator) 剧情文本生成为Timeline的DEMO
+* [EasySaveTest](https://github.com/chenggongchina/unity_study/tree/main/EasySaveTest) 插件EasySave的检测功能测试
